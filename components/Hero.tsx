@@ -1,96 +1,67 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { PORTFOLIO_OWNER, PORTFOLIO_ROLE, PORTRAIT_IMAGE } from '../constants';
+import { Github, Linkedin, Mail } from 'lucide-react'; // Make sure to install lucide-react
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/20 rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 animate-fade-in order-2 md:order-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-sm text-primary font-medium">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Available for new projects
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            I am <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-              {PORTFOLIO_OWNER}
-            </span>
-            <br />
-          </h1>
-
-          <p className="text-lg text-slate-400 max-w-lg leading-relaxed">
-            A <strong>{PORTFOLIO_ROLE}</strong> dedicated to crafting performant, accessible, and beautiful web applications. 
-            Let's build something amazing together.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a 
-              href="#projects" 
-              className="px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
-            >
-              View Work <ArrowRight size={18} />
-            </a>
-            <a 
-              href="#contact" 
-              className="px-8 py-4 bg-slate-800/50 text-white border border-slate-700 rounded-full font-semibold hover:bg-slate-800 transition-colors backdrop-blur-sm cursor-pointer"
-            >
-              Contact Me
-            </a>
-          </div>
-
-          <div className="flex items-center gap-6 pt-4">
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              <Github size={24} />
-            </a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              <Linkedin size={24} />
-            </a>
-            <a href="mailto:contact@wakim17.nl" className="text-slate-400 hover:text-white transition-colors">
-              <Mail size={24} />
-            </a>
-          </div>
+    <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-20 md:px-20 max-w-7xl mx-auto min-h-[80vh]">
+      
+      {/* Left Content */}
+      <div className="w-full md:w-1/2 mt-10 md:mt-0 space-y-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-semibold">
+          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          Available for new projects
         </div>
 
-        {/* Hero Visual - Portrait */}
-        <div className="relative order-1 md:order-2 animate-slide-up flex justify-center md:justify-end">
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
-             {/* Decorative blob/bg */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-teal-500 rounded-full opacity-20 blur-3xl"></div>
-             
-             {/* Image Container */}
-             <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-2 border-slate-700/50 shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500">
-                <img 
-                    src={PORTRAIT_IMAGE} 
-                    alt={PORTFOLIO_OWNER} 
-                    className="w-full h-full object-cover"
-                />
-             </div>
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          I am <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+            Wakim 17
+          </span>
+        </h1>
 
-             {/* Floater Element */}
-             <div className="absolute -bottom-6 -left-6 bg-card border border-slate-700 p-4 rounded-xl shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                        <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-slate-800"></div>
-                        <div className="w-8 h-8 rounded-full bg-teal-500 border-2 border-slate-800"></div>
-                        <div className="w-8 h-8 rounded-full bg-purple-500 border-2 border-slate-800"></div>
-                    </div>
-                    <div>
-                        <p className="text-xs font-bold text-white">50+ Projects</p>
-                        <p className="text-[10px] text-slate-400">Successfully Delivered</p>
-                    </div>
-                </div>
-             </div>
+        <p className="text-gray-400 text-lg max-w-lg leading-relaxed">
+          A <strong className="text-white">Senior Full Stack Engineer</strong> dedicated to crafting 
+          performant, accessible, and beautiful web applications. 
+          Let's build something amazing together.
+        </p>
+
+        <div className="flex gap-4 pt-4">
+          <button className="px-8 py-3 bg-white text-[#0a1122] rounded-full font-semibold hover:scale-105 transition transform">
+            View Work &rarr;
+          </button>
+          <button className="px-8 py-3 border border-white/20 rounded-full font-semibold hover:bg-white/10 transition">
+            Contact Me
+          </button>
+        </div>
+
+        <div className="flex gap-6 pt-8 text-gray-500">
+          <Github className="w-6 h-6 hover:text-white cursor-pointer transition" />
+          <Linkedin className="w-6 h-6 hover:text-white cursor-pointer transition" />
+          <Mail className="w-6 h-6 hover:text-white cursor-pointer transition" />
+        </div>
+      </div>
+
+      {/* Right Image */}
+      <div className="w-full md:w-1/2 flex justify-center relative">
+        <div className="relative w-80 h-96 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          {/* Replace this src with your actual image path */}
+          <img 
+            src="/path-to-your-image.jpg" 
+            alt="Wakim 17" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Floating Badge */}
+        <div className="absolute -bottom-6 -left-4 md:left-10 bg-[#1e293b] p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4 animate-bounce-slow">
+          <div className="flex -space-x-2">
+            <div className="w-8 h-8 rounded-full bg-teal-400 border-2 border-[#1e293b]"></div>
+            <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-[#1e293b]"></div>
+            <div className="w-8 h-8 rounded-full bg-purple-500 border-2 border-[#1e293b]"></div>
+          </div>
+          <div>
+            <div className="font-bold text-white">50+ Projects</div>
+            <div className="text-xs text-gray-400">Successfully Delivered</div>
           </div>
         </div>
       </div>

@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This ensures the scroll logic in your Header.tsx works smoothly */
+html {
+  scroll-behavior: smooth;
+}
