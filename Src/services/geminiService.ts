@@ -1,38 +1,30 @@
-import { GoogleGenAI } from "@google/genai";
-import { RESUME_CONTEXT } from "../constants";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Initialize Gemini Client
-// The API key must be obtained exclusively from the environment variable process.env.API_KEY.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Access the API key securely
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyBITBhHaqYkoRbL4mUZ0x3zCbR_LLZhoiE";
 
-export const sendMessageToGemini = async (
-  message: string,
-  history: { role: string; parts: { text: string }[] }[]
-): Promise<string> => {
+export const sendMessageToGemini = async (message: string, history: any[]) => {
   try {
-    const model = 'gemini-3-flash-preview';
-    
-    // We construct a chat session. 
-    // Note: In a real app, you might want to manage history more carefully.
-    const chat = ai.chats.create({
-      model: model,
-      config: {
-        systemInstruction: RESUME_CONTEXT,
-        temperature: 0.7,
-      },
-      history: history.map(h => ({
-        role: h.role,
-        parts: h.parts
-      })),
+    if (!API_KEY) {
+       // Fallback for demo/development if no key is present
+       console.warn("No API Key found");
+       await new Promise(resolve => setTimeout(resolve, 1000));
+       return "I am running in demo mode. Please add VITE_GEMINI_API_KEY to your .env file to connect to the real AI.";
+    }
+
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    const chat = model.startChat({
+      history: history,
     });
 
-    const result = await chat.sendMessage({
-      message: message,
-    });
+    const result = await chat.sendMessage(message);
+    const response = await result.response;
+    return response.text();
 
-    return result.text || "I'm sorry, I couldn't generate a response.";
   } catch (error) {
-    console.error("Error communicating with Gemini:", error);
+    console.error("AI Error:", error);
     throw error;
   }
 };

@@ -1,104 +1,97 @@
 import React from 'react';
 import { Project, Skill } from './types';
-import { Code, Database, Layout, Server, Smartphone, Globe, Cpu, Terminal } from 'lucide-react';
+import { Code, Database, Layout, Server, Smartphone, Globe, Cpu, Terminal, Gamepad2 } from 'lucide-react';
 
-export const PORTFOLIO_OWNER = "Wakim 17";
-export const PORTFOLIO_ROLE = "Senior Full Stack Engineer";
+export const PORTFOLIO_OWNER = "Jhony Wakim";
+export const PORTFOLIO_ROLE = "Developer & Game Designer";
 
-// TODO: Replace this URL with your actual portrait image
-export const PORTRAIT_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80";
+// TODO: Ensure this matches the file you uploaded to your public folder
+export const PORTRAIT_IMAGE = "/me.jpg";
 
+// --- HERO CONTENT ---
+export const HERO_TAGLINE = "I build engaging digital experiences and lead teams to turn innovative ideas into shipped products.";
+
+// --- SOCIAL LINKS ---
+export const SOCIAL_LINKS = {
+  github: "https://github.com/wakim17",
+  linkedin: "https://www.linkedin.com/in/jhony-wakim-aa6a73246", 
+  email: "mailto:johnywakim17@gmail.com"
+};
+
+// --- ABOUT CONTENT ---
 export const ABOUT_SUMMARY = `
-  I'm a passionate developer who finds joy in solving complex problems through clean, maintainable code. 
-  With over 7 years in the industry, I've had the privilege of working with startups and enterprise corporations alike.
-  My approach combines technical precision with a strong focus on user experience.
+  My passion lies at the intersection of logic and creativity. 
+  Whether I'm architecting a complex web application or designing an immersive game mechanic, 
+  my goal is always the same: to craft experiences that are performant, accessible, and genuinely fun to use.
 `;
 
 export const ABOUT_FULL = `
   <p class="mb-4">
-    My journey into software development began with a simple curiosity about how things work on the web. 
-    That curiosity quickly turned into a passion for building digital products that make a difference.
-    Over the last 7+ years, I have honed my skills across the entire stack, from crafting pixel-perfect 
-    front-end interfaces to architecting robust back-end systems.
+    <strong>My journey</strong> into technology didn't start with code—it started with curiosity. 
+    I wanted to know how the games I played were built and how the websites I visited actually worked. 
+    That curiosity quickly turned into a career.
   </p>
   <p class="mb-4">
-    I believe that the best code is invisible to the user—it just works, instantly and intuitively. 
-    I specialize in React, TypeScript, and Node.js, but I am always exploring new technologies 
-    to stay ahead of the curve. Recently, I've been diving deep into Generative AI and how it can 
-    transform user interactions.
+    Over the years, I’ve evolved from a pure coder into a <strong>product-minded engineer</strong>. 
+    I specialize in taking projects from the "napkin sketch" phase all the way to launch. 
+    I believe that the best software doesn't just function well; it respects the user's time and intelligence.
   </p>
   <p>
-    When I'm not coding, you can find me exploring new AI models, contributing to open source, 
-    or hiking the nearest mountain trail. I am always open to new challenges and opportunities 
-    to collaborate with like-minded individuals.
+    <strong>When I'm not at my keyboard</strong>, you won't find me near a screen. 
+    I love hiking mountain trails, exploring new cities, and dissecting game mechanics to understand what makes them "click."
   </p>
 `;
 
 export const RESUME_CONTEXT = `
-  You are an AI assistant for Wakim 17's portfolio website. 
-  Wakim 17 is a developer passionate about building digital experiences.
+  You are an AI assistant for Jhony Wakim's portfolio. 
+  Jhony is a Developer & Game Designer.
+  
+  Core Value: Brings projects from concept to launch.
   
   Skills:
-  - Frontend: React, TypeScript, Tailwind CSS
-  - Backend: Node.js, Databases, Cloud Infrastructure
-  - AI: Gemini API, Generative Models
+  - Game Design (Unity, C#)
+  - Full Stack Web (React, Node.js, TypeScript)
+  - Leadership & Product Strategy
   
-  Experience:
-  - Proven track record of delivering high-quality web applications.
-  
-  Key Projects:
-  - Reference the projects listed on the portfolio page.
-
-  Tone: Professional, friendly, concise, and helpful. 
-  If asked about contact info, direct them to the contact form section.
+  Tone: Professional, friendly, and enthusiastic about game design.
 `;
 
-// TODO: Replace these projects with the specific ones from wakim17.nl
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    title: 'Project Alpha',
-    description: 'A placeholder for your primary project. Update this description with details from your existing portfolio.',
-    technologies: ['React', 'TypeScript', 'Node.js'],
-    imageUrl: 'https://picsum.photos/800/600?random=10',
+    id: 'nfc-servo',
+    title: 'NFC Servo Control',
+    description: 'An interactive hardware project using servo motors and NFC scanning logic.',
+    technologies: ['C++', 'Arduino', 'Hardware'],
+    imageUrl: 'https://images.unsplash.com/photo-1555679427-1f6dfcce943b?auto=format&fit=crop&q=80&w=800', 
     link: '#',
     github: '#'
   },
   {
-    id: '2',
-    title: 'Project Beta',
-    description: 'A placeholder for another significant project. Highlights include real-time data processing and UI/UX design.',
-    technologies: ['Next.js', 'Firebase', 'Tailwind'],
-    imageUrl: 'https://picsum.photos/800/600?random=11',
+    id: 'game-proto',
+    title: 'Game Design Prototype',
+    description: 'A concept for a new gameplay mechanic focused on player agency.',
+    technologies: ['Unity', 'C#', 'Game Design'],
+    imageUrl: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800', 
     link: '#',
     github: '#'
   },
   {
-    id: '3',
-    title: 'Project Gamma',
-    description: 'An innovative solution focusing on performance and scalability.',
-    technologies: ['Go', 'Docker', 'PostgreSQL'],
-    imageUrl: 'https://picsum.photos/800/600?random=12',
+    id: 'project-3',
+    title: 'Project 3 Title',
+    description: 'Description coming soon...',
+    technologies: ['Tech 1', 'Tech 2'],
+    imageUrl: 'https://picsum.photos/800/600?random=10', 
     link: '#',
-  },
-  {
-    id: '4',
-    title: 'Project Delta',
-    description: 'Mobile-first application designed for optimal user engagement.',
-    technologies: ['React Native', 'GraphQL'],
-    imageUrl: 'https://picsum.photos/800/600?random=13',
-    link: '#',
-    github: '#'
   }
 ];
 
 export const SKILLS: Skill[] = [
+  { name: 'Game Design', icon: <Gamepad2 size={20} />, category: 'frontend' },
   { name: 'React & Ecosystem', icon: <Code size={20} />, category: 'frontend' },
   { name: 'TypeScript', icon: <Terminal size={20} />, category: 'frontend' },
-  { name: 'UI/UX Design', icon: <Layout size={20} />, category: 'frontend' },
   { name: 'Node.js', icon: <Server size={20} />, category: 'backend' },
   { name: 'Databases', icon: <Database size={20} />, category: 'backend' },
-  { name: 'Cloud Infra', icon: <Globe size={20} />, category: 'tools' },
+  { name: 'UI/UX Design', icon: <Layout size={20} />, category: 'frontend' },
   { name: 'Mobile Dev', icon: <Smartphone size={20} />, category: 'frontend' },
   { name: 'AI Integration', icon: <Cpu size={20} />, category: 'backend' },
 ];

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 export interface Project {
   id: string;
@@ -6,13 +6,13 @@ export interface Project {
   description: string;
   technologies: string[];
   imageUrl: string;
-  link: string;
+  link?: string;
   github?: string;
 }
 
 export interface Skill {
   name: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   category: 'frontend' | 'backend' | 'tools';
 }
 
@@ -22,11 +22,4 @@ export interface ChatMessage {
   text: string;
   timestamp: Date;
   isError?: boolean;
-}
-
-export enum SectionId {
-  HERO = 'hero',
-  PROJECTS = 'projects',
-  ABOUT = 'about',
-  CONTACT = 'contact',
 }

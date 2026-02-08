@@ -8,7 +8,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
 
-// Home Component containing all main sections
 const Home = () => (
   <>
     <Hero />
@@ -18,7 +17,6 @@ const Home = () => (
   </>
 );
 
-// All Projects Component
 const AllProjectsPage = () => (
   <>
     <Projects isHomePage={false} />
@@ -26,7 +24,6 @@ const AllProjectsPage = () => (
   </>
 );
 
-// Full About Component
 const AboutPage = () => (
     <>
         <About isHomePage={false} />
@@ -34,30 +31,42 @@ const AboutPage = () => (
     </>
 );
 
-// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 };
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-dark text-slate-200">
+      {/* FIX: We removed 'bg-dark' from here and added 'z-0'. 
+         This ensures the background color doesn't hide the glows.
+      */}
+      <div className="min-h-screen bg-slate-900 text-slate-200 relative overflow-hidden z-0">
+        
+        {/* BACKGROUND GLOWS: Now definitely behind the content but visible on the dark bg */}
+        <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            {/* Top Left Blue Glow */}
+            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] opacity-50 animate-pulse"></div>
+            {/* Bottom Right Purple Glow */}
+            <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[100px] opacity-50 animate-pulse"></div>
+        </div>
+
         <ScrollToTop />
         <Header />
-        <main>
+        
+        {/* Content sits above the glow */}
+        <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<AllProjectsPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
+        
         <Footer />
         <AIChat />
       </div>

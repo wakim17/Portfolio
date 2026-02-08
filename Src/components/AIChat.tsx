@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { ChatMessage } from '../types';
-import { sendMessageToGemini } from '../Src/services/geminiService';
+import { sendMessageToGemini } from "../services/geminiService";
 
 const AIChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const AIChat: React.FC = () => {
     {
       id: 'welcome',
       role: 'model',
-      text: "Hi! I'm Alex's AI Assistant. Ask me anything about Alex's projects, skills, or experience!",
+      text: "Hi! I'm Jhony's AI Assistant. Ask me anything about Jhony's projects, skills, or experience!",
       timestamp: new Date(),
     },
   ]);

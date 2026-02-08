@@ -22,7 +22,6 @@ const Header: React.FC = () => {
 
     if (location.pathname !== '/') {
       navigate('/');
-      // Small delay to allow the page to route before scrolling
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -37,10 +36,10 @@ const Header: React.FC = () => {
     }
   };
 
+  // Removed "Contact" from here since it's now the main button
   const navLinks = [
     { name: 'Projects', id: 'projects' },
     { name: 'About', id: 'about' },
-    { name: 'Contact', id: 'contact' },
   ];
 
   return (
@@ -70,12 +69,13 @@ const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
+          {/* Renamed button to Contact Me */}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
             className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-full transition-colors border border-slate-700 cursor-pointer"
           >
-            Hire Me
+            Contact Me
           </a>
         </nav>
 
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                 onClick={(e) => handleNavClick(e, 'contact')}
                 className="text-lg font-medium text-primary"
               >
-                Hire Me
+                Contact Me
               </a>
           </div>
         </div>

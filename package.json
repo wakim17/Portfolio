@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@google/generative-ai": "^0.24.1",
+    "framer-motion": "^12.33.0",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-parallax-tilt": "^1.7.319",
     "react-router-dom": "^6.30.3"
   },
   "devDependencies": {
