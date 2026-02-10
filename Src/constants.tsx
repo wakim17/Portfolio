@@ -81,34 +81,34 @@ export const PROJECTS: Project[] = [
   },
   
   // --- INTERNSHIP 2 ---
-  {
+{
     id: 'internship-edtech-2025',
     title: 'Educational Technology & Research',
-    description: 'Modernized the curriculum through interactive digital tools and strategic Artificial Intelligence research.',
+    description: 'Modernized the curriculum through strategic AI research, immersive 360° video pilots, and experimental hardware bridges (Drone-to-VR).',
     
     longDescription: `
-      <p><strong>The Role:</strong> As an Educational Technology Developer...</p>
-      (keep your existing long description text here)
+      <p><strong>The Role:</strong> My core responsibility was to modernize the educational curriculum by introducing "Future Tech" into the classroom. This involved a mix of strategic research and hands-on hardware prototyping.</p>
+      <p><strong>Hardware Innovation (Drone & MR):</strong> I engineered a custom bridge between a <strong>DJI Drone</strong> and a <strong>Meta Quest 2</strong> to create an immersive FPV flight experience for students. Additionally, I developed <strong>Mixed Reality</strong> applications that allowed students to interact with 3D learning models in physical space.</p>
+      <p><strong>Ed-Tech & AI Research:</strong> Beyond hardware, I implemented <strong>360-degree video</strong> tours to create virtual field trips. I also conducted critical research into <strong>Generative AI</strong> (ChatGPT), analyzing its ethical implications to help the institution formulate safe usage guidelines.</p>
     `,
     challenges: [
-      "Integrating new digital tools into legacy Learning Management Systems.",
-      "Ensuring content was accessible to students with varying technical skills.",
-      "Navigating the ethical gray areas of Artificial Intelligence in academic settings."
+      "Navigating the ethical gray areas of Artificial Intelligence in academic settings.",
+      "Bridging closed hardware ecosystems (DJI to Meta Quest) for the drone pilot.",
+      "Ensuring complex 360°/MR content was accessible to non-technical staff."
     ],
     solutions: [
-      "Created comprehensive user manuals for staff to maintain the new tools.",
-      "Conducted A/B testing with student groups to refine the interactivity.",
-      "Delivered a research report on Artificial Intelligence that informed department policy."
+      "Delivered a research report on AI that informed department policy.",
+      "Engineered a custom software bridge to handle low-latency video handoff.",
+      "Created comprehensive 'Teacher Guides' to lower the barrier to entry for new tech."
     ],
 
-    technologies: ['H5P Interactive Content', '360-Degree Video', 'Artificial Intelligence Research', 'Instructional Design'],
+    technologies: ['AI Research', 'Mixed Reality', 'DJI SDK', '360° Video', 'Unity'],
     imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800', 
     
-    // --- USE THE IMPORTED VARIABLE HERE ---
+    // Link to your PDF
     link: internshipPdf, 
     linkLabel: "View Portfolio PDF",
     
-    github: '#'
   },
   // --- PROJECT 1: The "Ambition" Project (Drone + VR) ---
   {
