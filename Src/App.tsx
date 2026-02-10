@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
+import ProjectDetail from './components/ProjectDetail';
 
 const Home = () => (
   <>
@@ -60,11 +61,13 @@ function App() {
         
         {/* Content sits above the glow */}
         <main className="relative z-10">
-          <Routes>
+        <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<AllProjectsPage />} />
+            {/* NEW ROUTE BELOW */}
+            <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/about" element={<AboutPage />} />
-          </Routes>
+        </Routes>
         </main>
         
         <Footer />

@@ -13,10 +13,14 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
   const navigate = useNavigate();
   const displayedProjects = isHomePage ? PROJECTS.slice(0, 3) : PROJECTS;
 
+  const handleCardClick = (id: string) => {
+    navigate(`/project/${id}`);
+  };
+
   return (
     <section id="projects" className={`px-8 md:px-20 max-w-7xl mx-auto ${isHomePage ? 'py-20' : 'pt-32 pb-20'}`}>
       
-      {/* NEW: Top "Back to Home" Button (Only on full page) */}
+      {/* Top Back Button (Only on full page) */}
       {!isHomePage && (
         <div className="mb-12">
             <button
@@ -46,10 +50,12 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="cursor-pointer" // Shows the user it's clickable
+            onClick={() => handleCardClick(project.id)}
           >
             <Tilt 
-              tiltMaxAngleX={10} 
-              tiltMaxAngleY={10} 
+              tiltMaxAngleX={5} 
+              tiltMaxAngleY={5} 
               perspective={1000} 
               scale={1.02}
               transitionSpeed={1000}
@@ -65,14 +71,27 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
                     <div className="p-3 bg-primary/10 rounded-lg text-primary">
                       <Github size={24} />
                     </div>
+                    {/* External Links (Stop propagation to prevent opening details page) */}
                     <div className="flex gap-4">
                       {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition z-20">
+                        <a 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-slate-400 hover:text-primary transition z-20"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                           <Github size={20} />
                         </a>
                       )}
                       {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition z-20">
+                        <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-slate-400 hover:text-primary transition z-20"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                           <ExternalLink size={20} />
                         </a>
                       )}
@@ -93,11 +112,16 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
                   </p>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.technologies.map(tag => (
+                    {project.technologies.slice(0, 3).map(tag => (
                       <span key={tag} className="text-xs font-mono text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full mb-2 mr-2 inline-block">
                         {tag}
                       </span>
                     ))}
+                    {project.technologies.length > 3 && (
+                        <span className="text-xs font-mono text-slate-500 bg-slate-800 px-3 py-1 rounded-full mb-2 inline-block">
+                            +{project.technologies.length - 3}
+                        </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -106,7 +130,6 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
         ))}
       </div>
 
-      {/* Bottom Button */}
       <div className="mt-16 flex justify-center">
         {isHomePage ? (
           <button

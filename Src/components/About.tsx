@@ -133,7 +133,7 @@ const About: React.FC<AboutProps> = ({ isHomePage = false }) => {
                         <div className="text-sm text-slate-400">
                             <p className="mb-4">Looking for a specific skill set or project history? My CV covers:</p>
                             <ul className="list-disc list-inside space-y-2 ml-2">
-                                <li>Full Project History</li>
+                                <li>Work Experiance</li>
                                 <li>Education & Certifications</li>
                                 <li>Detailed Tech Stack</li>
                             </ul>
