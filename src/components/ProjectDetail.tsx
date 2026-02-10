@@ -24,6 +24,10 @@ const ProjectDetail = () => {
     );
   }
 
+  // Helper to check if a link is real
+  const hasLiveLink = project.link && project.link !== '#';
+  const hasGithub = project.github && project.github !== '#';
+
   return (
     <div className="min-h-screen pt-24 pb-20 relative bg-slate-900">
       
@@ -57,12 +61,15 @@ const ProjectDetail = () => {
             </h1>
             
             <div className="flex flex-wrap gap-4">
-                {project.github && (
+                {/* Github Button */}
+                {hasGithub && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-slate-800 rounded-full hover:bg-slate-700 hover:text-white transition-all border border-slate-700">
                         <Github size={20} /> View Code
                     </a>
                 )}
-                {project.link && (
+
+                {/* Live Link / PDF Button - NOW SAFER */}
+                {hasLiveLink ? (
                     <a 
                         href={project.link} 
                         target="_blank" 
@@ -70,9 +77,17 @@ const ProjectDetail = () => {
                         className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20"
                     >
                         <ExternalLink size={20} /> 
-                        {/* Use custom label if it exists, otherwise default to 'Live Demo' */}
                         {project.linkLabel || "Live Demo"}
                     </a>
+                ) : (
+                    /* Disabled Button State if link is missing or '#' */
+                    <button 
+                        disabled 
+                        className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-500 rounded-full border border-slate-700 cursor-not-allowed opacity-50"
+                    >
+                        <ExternalLink size={20} /> 
+                        {project.linkLabel || "Coming Soon"}
+                    </button>
                 )}
             </div>
         </motion.div>
@@ -97,13 +112,11 @@ const ProjectDetail = () => {
                 transition={{ delay: 0.3 }}
                 className="md:col-span-2 space-y-12"
             >
-                {/* 1. The Story (Long Description) */}
                 <div>
                     <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                         <Layers className="text-primary" /> Project Story
                     </h3>
                     <div className="text-slate-300 text-lg leading-relaxed space-y-4">
-                        {/* If longDescription exists, use it. Otherwise, fallback to description */}
                         {project.longDescription ? (
                             <div dangerouslySetInnerHTML={{ __html: project.longDescription }} />
                         ) : (
@@ -112,7 +125,6 @@ const ProjectDetail = () => {
                     </div>
                 </div>
 
-                {/* 2. Challenges & Solutions (If they exist) */}
                 {project.challenges && (
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-red-500/5 p-6 rounded-2xl border border-red-500/10">

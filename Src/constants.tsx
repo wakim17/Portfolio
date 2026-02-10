@@ -6,6 +6,8 @@ import {
   Users, Wifi, Printer, BookOpen 
 } from 'lucide-react';
 
+import internshipPdf from './assets/internship-portfolio.pdf';
+
 export const PORTFOLIO_OWNER = "Jhony Wakim";
 export const PORTFOLIO_ROLE = "Developer & Game Designer";
 
@@ -78,16 +80,15 @@ export const PROJECTS: Project[] = [
     github: '#' 
   },
   
-  // --- INTERNSHIP 2: Previous Internship (2025) ---
+  // --- INTERNSHIP 2 ---
   {
     id: 'internship-edtech-2025',
     title: 'Educational Technology & Research',
     description: 'Modernized the curriculum through interactive digital tools and strategic Artificial Intelligence research.',
     
     longDescription: `
-      <p><strong>The Role:</strong> As an Educational Technology Developer, I was tasked with modernizing traditional learning materials. My focus was on creating "active learning" experiences that engage students more effectively than passive reading.</p>
-      <p><strong>Interactive Content:</strong> I utilized <strong>H5P technology</strong> to build interactive video modules and quizzes that adapt to the student's pace. I also produced and integrated 360-degree video tours to provide immersive field trip experiences.</p>
-      <p><strong>Research:</strong> A significant portion of my role involved researching the impact of <strong>Generative Artificial Intelligence</strong> (like ChatGPT) in education. I analyzed the ethical implications and helped formulate early guidelines for how the institution could safely adopt these tools.</p>
+      <p><strong>The Role:</strong> As an Educational Technology Developer...</p>
+      (keep your existing long description text here)
     `,
     challenges: [
       "Integrating new digital tools into legacy Learning Management Systems.",
@@ -103,10 +104,11 @@ export const PROJECTS: Project[] = [
     technologies: ['H5P Interactive Content', '360-Degree Video', 'Artificial Intelligence Research', 'Instructional Design'],
     imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800', 
     
-    // CUSTOM LINK SETUP
-    link: '/internship-portfolio.pdf', // Make sure to put your PDF in the public folder and rename it to this!
+    // --- USE THE IMPORTED VARIABLE HERE ---
+    link: internshipPdf, 
     linkLabel: "View Portfolio PDF",
     
+    github: '#'
   },
   // --- PROJECT 1: The "Ambition" Project (Drone + VR) ---
   {
