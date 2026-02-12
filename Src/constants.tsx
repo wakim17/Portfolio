@@ -7,6 +7,15 @@ import {
 } from 'lucide-react';
 
 import internshipPdf from './assets/internship-portfolio.pdf';
+import armourImage from './assets/armour-game.jpg';
+import RobotImage from './assets/Robot.jpg';
+import trustTriangleGame from './assets/trust-triangle-print-and-play.zip'; 
+import Icono from './assets/Icono.zip'; 
+import twineGame from './assets/Chapter 1(Final).html?url';
+import narrativePosters from './assets/Narrative posters.pdf';
+import Kim from './assets/Kim.png';
+import Duo from './assets/duo1.jpeg';
+import PP from './assets/PP.png';
 
 export const PORTFOLIO_OWNER = "Jhony Wakim";
 export const PORTFOLIO_ROLE = "Developer & Game Designer";
@@ -54,7 +63,7 @@ export const PROJECTS: Project[] = [
   // --- INTERNSHIP 1: Current Graduation Project ---
   {
     id: 'internship-noorderpoort',
-    title: 'Virtual Reality Educator Showcase',
+    title: 'Virtual Reality Educator Showcase - Internship & Graduation Project',
     description: 'My graduation project bridging the gap between complex Extended Reality technology and the classroom.',
     
     longDescription: `
@@ -83,7 +92,7 @@ export const PROJECTS: Project[] = [
   // --- INTERNSHIP 2 ---
 {
     id: 'internship-edtech-2025',
-    title: 'Educational Technology & Research',
+    title: 'Educational Technology & Research - Internship',
     description: 'Modernized the curriculum through strategic AI research, immersive 360° video pilots, and experimental hardware bridges (Drone-to-VR).',
     
     longDescription: `
@@ -110,108 +119,296 @@ export const PROJECTS: Project[] = [
     linkLabel: "View Portfolio PDF",
     
   },
-  // --- PROJECT 1: The "Ambition" Project (Drone + VR) ---
+// --- PROJECT: Robotics Elective (DiciPet) ---
   {
-    id: 'vr-drone-bridge',
-    title: 'Meta Quest 2 x DJI Bridge',
-    description: 'Bridged a closed ecosystem (DJI Drone) with a VR Headset (Meta Quest 2) in just two weeks. Created a custom interface for immersive FPV flight control.',
-    technologies: ['Unity', 'VR/XR', 'Hardware Hacking', 'C#'],
-    imageUrl: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=800', 
+    id: 'dicipet-social-robot',
+    title: 'DiciPet: Productivity Desk Robot',
+    description: 'Designed and prototyped a physical desk companion that utilizes gamification and physical movement to promote user discipline and focus.',
+    
+    longDescription: `
+      <p><strong>The Concept:</strong> I synthesized an original entrepreneurial concept—a productivity desk car/pet called "DiciPet"—into a functional hardware prototype for a Robotics Elective. The core objective was to construct a "social robot" that actively helps users break bad habits and stay focused on their tasks.</p>
+      <p><strong>Interaction & Gamification:</strong> I designed the robot's behavior to mimic a Tamagotchi-style companion, where the user's real-world productivity directly correlates to the robot's health and happiness. I engineered the state machine so that if a user loses focus, the robot might physically drive away, forcing them to physically move to snooze an alarm or reset their focus timer.</p>
+      <p><strong>Hardware & Schematics:</strong> To support these dynamic, physical interactions, I evaluated the hardware requirements and utilized <strong>KiCad</strong> to design custom electrical schematics. This ensured the robot could reliably process Artificial Intelligence logic, communicate with the team's broader state machine, and execute physical locomotion.</p>
+    `,
+    challenges: [
+      "Translating a theoretical startup concept into a functional, physical robotic prototype.",
+      "Designing a state machine that accurately tracks productivity metrics and translates them into engaging physical behaviors.",
+      "Routing reliable electrical circuits in KiCad to safely support both the processing hardware and the physical motors."
+    ],
+    solutions: [
+      "Formulated a gamified interaction model where user focus directly 'feeds' the robot's digital state.",
+      "Iteratively evaluated and refined the Artificial Intelligence responses based on physical testing to disrupt user procrastination effectively.",
+      "Utilized KiCad to design, map, and validate clear electrical diagrams before physical assembly."
+    ],
+
+    technologies: ['Robotics', 'KiCad', 'AI Integration', 'State Machines', 'Gamification'],
+    // Image: A conceptual robotics/desk pet image
+    imageUrl: RobotImage, 
+    
     link: '#',
-    github: '#'
+    linkLabel: "Video Coming Soon", 
   },
 
-  // --- PROJECT 2: Hardware ---
+// --- PROJECT: The Armour of God ---
   {
-    id: 'nfc-servo',
-    title: 'NFC Servo Security',
-    description: 'An interactive hardware locking mechanism. Scans a specific NFC card to rotate a servo 45 degrees (unlock), and scans again to close it.',
-    technologies: ['C++', 'Arduino', 'Embedded Systems'],
-    imageUrl: 'https://images.unsplash.com/photo-1555679427-1f6dfcce943b?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
-    github: '#'
+    id: 'armour-of-god',
+    title: 'The Armour of God',
+    description: 'Designed and developed a local multiplayer "pass-the-phone" party game centered around strategic choices and spiritual themes.',
+    
+    longDescription: `
+      <p><strong>The Concept:</strong> I developed "The Armour of God," a strategic party game designed to be played by two to five players sharing a single mobile device. Targeted at teenagers aged thirteen to seventeen, the game translates the biblical concept of spiritual warfare (Ephesians 6) into an engaging, turn-based experience.</p>
+      <p><strong>Mechanics & Design:</strong> The core mechanic revolves around a "pass-the-phone" loop. I designed the gameplay so players must navigate through various trials, ruins, and arenas, making tactical decisions to collect and utilize different pieces of the metaphorical armor. I analyzed the target audience to ensure the pacing and social dynamics of sharing a device remained fun and competitive without losing the underlying narrative theme.</p>
+      <p><strong>Development:</strong> I evaluated traditional local multiplayer constraints to engineer a seamless user interface that easily transitions between players. The project required synthesizing narrative design with tight, easily understandable mobile interactions.</p>
+    `,
+    challenges: [
+      "Designing a seamless and fair 'pass-the-phone' loop for two to five players on a single mobile screen.",
+      "Translating abstract theological concepts (Ephesians 6) into engaging, competitive party game mechanics for teenagers.",
+      "Maintaining player attention and managing hidden information during off-turns in a local multiplayer setting."
+    ],
+    solutions: [
+      "Engineered an intuitive user interface that clearly telegraphs turn transitions and manages player states.",
+      "Formulated rapid trial encounters (ruins, arenas) to keep the turn pacing fast and engaging.",
+      "Synthesized strategic resource gathering (armor pieces) with interactive choices to maintain competitive tension."
+    ],
+
+    technologies: ['Mobile Game Development', 'Local Multiplayer', 'Unity', 'User Interface Design'],
+    // Image: Represents mobile/interactive gaming
+    imageUrl: armourImage,    
+    link: 'https://wakim17.itch.io/armour-of-god',
+    linkLabel: "Download on Itch.io", 
+    github: 'https://github.com/wakim17/Armour-of-God'
   },
 
-  // --- PROJECT 3: Game Dev ---
-  {
-    id: 'game-proto',
-    title: 'Project: Agency (Prototype)',
-    description: 'A gameplay mechanic prototype focused on emergent storytelling. Players influence the world state through indirect actions rather than direct combat.',
-    technologies: ['Unity', 'C#', 'Game Design', 'AI'],
-    imageUrl: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
-    github: '#'
+  // --- PROJECT : The Trust Triangle (Client Project) ---
+{
+    id: 'trust-triangle-card-game',
+    title: 'The Trust Triangle',
+    description: 'A client-commissioned serious card game that gamifies Self-Sovereign Identity (SSI) and digital data management. Developed in collaboration with the Dutch education agency (DUO).',
+    
+    longDescription: `
+      <p><strong>The Client Challenge:</strong> We partnered with DUO (the executive education agency of the Netherlands) and DIT-Lab to explore how to educate non-technical professionals about Self-Sovereign Identity (SSI). Through mixed-methods research, we discovered our target audience valued data control but feared security risks and distrusted commercial data models.</p>
+      <p><strong>The Mechanics:</strong> To translate these abstract digital concepts into a tangible experience, I co-designed "The Trust Triangle," a competitive card game simulating Dutch digital administration. Players collect "Credential Cards" (like an ID or Diploma) to build a secure digital wallet, which they use to complete "Task Cards" (like applying for a student loan). To simulate real-world digital threats, players can use "Action Cards" like 'Data Breach' or 'Phishing Attack' against opponents.</p>
+      <p><strong>The Impact:</strong> I designed two complementary versions of the game: a deep, strategic "Full Edition" for workshops, and a fast-paced 10-minute "Gift Edition" designed as a corporate relationship gift. The project successfully visualized the advantages and risks of SSI, earning a public endorsement from the client on LinkedIn. You may download the full game files as it is a print and play!</p>
+    `,
+    challenges: [
+      "Translating complex, abstract Self-Sovereign Identity (SSI) systems into intuitive, physical card mechanics.",
+      "Balancing the educational goal of teaching data privacy with engaging, competitive gameplay.",
+      "Designing two distinct editions (Full and Gift) to accommodate both deep workshop sessions and quick 10-minute demonstrations."
+    ],
+    solutions: [
+      "Operationalized the abstract concept of 'data control' by making efficient hand management and credential collection the primary path to victory.",
+      "Materialized user anxieties about data hacking into interactive 'Action Cards' that allow players to disrupt opponents, simulating real-world security risks.",
+      "Developed a clean, 'Futuristic Minimalism' UI inspired by Dutch government design to ensure the game felt like an official, trustworthy tool."
+    ],
+
+    technologies: ['Tabletop Game Design', 'Client Relations', 'UI/UX Design', 'Print & Play', 'Serious Games'],
+    
+    // Remember to import your image at the top and replace this string if you have a photo of the cards!
+    imageUrl: Duo, 
+    
+    // Uses the zip file variable you imported at the top of constants.tsx
+    link: trustTriangleGame, 
+    linkLabel: "Download Print & Play", 
+    },
+
+// --- PROJECT : Unreal Engine Game Development ---
+{
+    id: 'unreal-horror-experiment',
+    title: 'Unreal Engine: Psychological Horror',
+    description: 'Developed a first-person psychological horror game in Unreal Engine, driven by user psychology research and custom Blueprint scripting.',
+    
+    longDescription: `
+      <p><strong>The Concept & Research:</strong> I engineered a first-person horror experience where the player takes on the role of Leo, a kidnapped journalist. To ensure the game effectively built tension, I conducted a survey of 25 players, using the data to prioritize atmospheric design, limited visibility, and dynamic sound over cheap jump scares.</p>
+      <p><strong>Blueprint Engineering:</strong> I programmed the core gameplay loop using Unreal's Blueprint visual scripting. I built a robust Line Trace system for interacting with objects (collecting scattered polaroids) and validating win conditions via an Exit Statue. I also engineered a custom AI enemy that triggers after collecting specific items, hunting the player through the environment.</p>
+      <p><strong>Dynamic Audio & Optimization:</strong> To maximize immersion, I created a location-based audio system using Trigger Volumes and Timelines to seamlessly crossfade ambient sounds (Forest to Church to Cemetery). After playtesting revealed CPU performance drops, I successfully optimized the game by adjusting engine scalability, disabling hardware ray tracing, and strategically placing invisible blocking volumes to cull unnecessary rendering.</p>
+    `,
+    challenges: [
+      "Translating user psychology survey data into actionable level design and environmental storytelling.",
+      "Designing a dynamic audio system that seamlessly transitions between different environmental zones without abrupt clipping.",
+      "Managing CPU performance spikes caused by large maps and complex volumetric lighting."
+    ],
+    solutions: [
+      "Engineered custom Blueprint Timelines and Trigger Volumes to smoothly fade ambient audio based on the player's precise location.",
+      "Implemented a frame-by-frame Line Trace interaction system for precise object collection and UI prompting.",
+      "Optimized the project by tweaking the Early Z-pass, disabling static lighting, and analyzing 'stat unit' metrics to boost framerates from 30 to a stable 50+ FPS."
+    ],
+
+    technologies: ['Unreal Engine 5', 'Blueprint Scripting', 'UX Research', 'Level Design', 'Performance Optimization'],
+    
+    // Remember to take a spooky screenshot of your game, put it in src/assets, and import it at the top!
+    imageUrl: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?auto=format&fit=crop&q=80&w=800', 
+    
+    link: '#', 
+    linkLabel: "Watch Gameplay Video", 
   },
 
-  // --- PROJECT 4: Full Stack ---
+// --- PROJECT : Wijkbedrijf Selwerd (Digital Inclusion) ---
   {
-    id: 'task-master',
-    title: 'Collaborative Task Board',
-    description: 'A real-time project management tool with drag-and-drop functionality. Features live updates using WebSockets for team synchronization.',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
+    id: 'icono-communication-game',
+    title: 'Icono: Playful Communication',
+    description: 'Designed a cooperative Print & Play card game for a community hub to bridge language barriers among volunteers speaking over 140 different languages.',
+    
+    longDescription: `
+      <p><strong>The Client Challenge:</strong> Wijkbedrijf Selwerd is a diverse community hub where volunteers work together, but severe language barriers (with over 140 languages spoken) often lead to social isolation and misunderstandings. The client needed a solution to foster connection, noting that standard digital translation apps felt "cold" and transactional.</p>
+      <p><strong>The Mechanics:</strong> I designed "Icono," a cooperative card game that reframes translation from a frustrating task into a playful, relationship-building activity. Players draw a combination of color-coded cards (Red: Emotions, Blue: Actions, Green: Objects) and must act out the resulting scenario without speaking, while their teammates guess the meaning in Dutch.</p>
+      <p><strong>Testing & Pedagogy:</strong> I structured the game's success metrics around Bloom’s Taxonomy, specifically tracking the Affective Domain (willingness to participate, comfort with vulnerability). Through structured playtesting with the target demographic, I observed that the cooperative nature of the game successfully guided players through the "Valley of Despair" (frustration), resulting in shared laughter and genuine cross-cultural connection.</p>
+    `,
+    challenges: [
+      "Designing a rule set that could be understood by players with A0-level Dutch proficiency.",
+      "Creating a safe psychological environment where adults felt comfortable being vulnerable and acting out silly prompts.",
+      "Replacing 'cold' digital translation tools with a warm, low-tech, and highly accessible physical solution."
+    ],
+    solutions: [
+      "Engineered an intuitive color-coded card system relying entirely on universal iconography rather than text.",
+      "Drafted a comprehensive Facilitation Manual to guide community leaders in maintaining a positive, encouragement-focused atmosphere.",
+      "Delivered the game as an easily distributable 'Print & Play' file to ensure maximum accessibility for the non-profit organization."
+    ],
+
+    technologies: ['Serious Games', 'Print & Play', 'Pedagogical Design', 'UX Research', 'Empathy-Driven Design'],
+    
+    // Remember to import a photo of your cards at the top and replace this string!
+    imageUrl: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800', 
+    
+    // Link to the PDF or Zip of the printable cards
+    link: Icono, 
+    linkLabel: "Download Print & Play", 
+    
   },
 
-  // --- PROJECT 5: Mobile ---
+// --- PROJECT: Guards Up (Noorderpoort VR) ---
   {
-    id: 'mobile-habit',
-    title: 'Gamified Habit Tracker',
-    description: 'A cross-platform mobile app that turns daily habits into RPG stats. Users "level up" their real life by completing daily goals.',
-    technologies: ['React Native', 'TypeScript', 'Mobile UI'],
-    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
+    id: 'guards-up-vr',
+    title: 'Guards Up: VR Security Simulator',
+    description: 'Engineered a Virtual Reality training simulator for Noorderpoort security students to practice exam-aligned patrol scenarios and emergency responses.',
+    
+    longDescription: `
+      <p><strong>The Client Challenge:</strong> Partnered with Noorderpoort, a major vocational school, to develop a Virtual Reality training environment for their Security Officer program. The client needed a safe, repeatable platform for students to practice high-stress, real-world scenarios (such as fires, power outages, and intruders) that are difficult to replicate in a physical classroom.</p>
+      <p><strong>UX Research & Mechanics:</strong> I conducted extensive UX research, including teacher interviews and student focus groups, to map the VR mechanics directly to the official Dutch curriculum and exam criteria. I engineered dynamic patrol mechanics featuring interactive environments (doors, locks, alarms), randomized events, and mandatory exam checkpoints.</p>
+      <p><strong>Feedback & Aesthetics:</strong> To ensure the game functioned as an educational tool, I implemented a robust performance feedback system that tracks critical errors and provides a post-session debrief. Visually, we utilized a stylized, toon-shaded aesthetic (inspired by games like 'I Expect You To Die') to ensure interactive objects were easily identifiable while maintaining a tense, immersive atmosphere.</p>
+    `,
+    challenges: [
+      "Replicating strict real-world exam grading criteria within a Virtual Reality environment.",
+      "Designing stress-inducing scenarios (e.g., sudden alarms, low visibility) without causing overwhelming cognitive overload.",
+      "Translating complex Dutch procedural security requirements into engaging, intuitive game mechanics."
+    ],
+    solutions: [
+      "Engineered a modular scenario library featuring distinct modes (Tutorial, Practice, Exam) to progressively build student competence.",
+      "Implemented a comprehensive real-time and post-session feedback system to clearly highlight missed checkpoints and errors.",
+      "Utilized a bold, toon-shaded art style to ensure visual clarity and optimal performance on the Meta Quest 2 headsets."
+    ],
+
+    technologies: ['Virtual Reality', 'Meta Quest 2', 'UX Research', 'Serious Games', 'Performance Tracking'],
+    
+    // Replace with a screenshot from your game!
+    imageUrl: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=800', 
+    
+    // We will link your trailer here!
+    link: 'https://www.youtube.com/watch?v=ZXPcvMzqUpU', 
+    linkLabel: "Watch Trailer", 
+    
+    github: 'https://github.com/wakim17/Noorderpoort' 
   },
 
-  // --- PROJECT 6: Multiplayer ---
+// --- PROJECT: Luna VR (Pico Headset) ---
   {
-    id: 'multiplayer-fps',
-    title: 'Arena Shooter Netcode',
-    description: 'Implemented client-side prediction and server reconciliation for a fast-paced multiplayer shooter. Minimized latency perception for players.',
-    technologies: ['Unreal Engine 5', 'C++', 'Networking'],
-    imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
+    id: 'luna-vr-pico',
+    title: 'Luna VR: AI Space Companion',
+    description: 'Engineered an immersive Virtual Reality experience for the Pico headset, exploring the psychological impact of lunar isolation and the mitigating role of advanced AI companions.',
+    
+    longDescription: `
+      <p><strong>The Concept & Research:</strong> Set in a near-future lunar colony, the player assumes the role of an engineer tasked with maintaining complex systems while grappling with extreme isolation. I conducted extensive research into the psychology of space exploration and the future of Artificial Intelligence to design an experience that simulates how human-AI interaction can mitigate mental stress.</p>
+      <p><strong>AI Dialogue System:</strong> I engineered an interactive dialogue system featuring "Luna," an advanced AI companion. I designed the branching narrative to mimic human empathy, allowing the player to engage in meaningful, choice-driven conversations that dynamically affect the storyline.</p>
+      <p><strong>Mechanics & VR Optimization:</strong> Developed specifically for the standalone Pico VR headset, I optimized interactive 3D environments (including a custom-modeled futuristic spacecraft) to ensure high framerates and immersion.  I also designed a highly minimalistic User Interface (UI) to reduce cognitive load and keep the player focused on the narrative and atmospheric tension.</p>
+    `,
+    challenges: [
+      "Designing an empathetic, realistic AI dialogue system that effectively mitigates the simulated psychological stress of lunar isolation.",
+      "Transitioning complex 2D conceptual art (futuristic spacecraft) into optimized 3D models suitable for standalone VR rendering.",
+      "Balancing narrative storytelling with interactive VR mechanics and branching dialogue choices."
+    ],
+    solutions: [
+      "Engineered a dynamic dialogue tree allowing players to engage in meaningful, choice-driven conversations with the AI companion.",
+      "Iteratively playtested and refined the UI/UX, implementing minimalistic menus to maintain high immersion and reduce cognitive load.",
+      "Utilized Unity and the Pico Integration SDK to script interactive environmental puzzles and narrative triggers within the lunar dome."
+    ],
+
+    technologies: ['Virtual Reality', 'Pico VR', 'AI Dialogue Systems', 'UX/UI Design', '3D Modeling'],
+    
+    // Replace with a screenshot from your game!
+    imageUrl: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&q=80&w=800', 
+    
+    // We will link your trailer here!
+    link: 'https://www.youtube.com/watch?v=O5Yf8BD-YQo&feature=youtu.be', 
+    linkLabel: "Watch Trailer", 
+    
+    github: 'https://github.com/wakim17/VRTELEE' 
   },
 
-  // --- PROJECT 7: AI/Python ---
+// --- PROJECT: The Social Chronicle (Narrative Design) ---
   {
-    id: 'ai-pathfinding',
-    title: 'Visual Pathfinding Algo',
-    description: 'An interactive visualizer for A* and Dijkstra algorithms. Users can draw walls and watch the AI find the optimal path in real-time.',
-    technologies: ['Python', 'Algorithms', 'Interactive UI'],
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
+    id: 'the-social-chronicle',
+    title: 'The Social Chronicle',
+    description: 'A comprehensive narrative design and world-building project for a 1940s action-adventure game, featuring dynamic morality systems and an interactive Twine prototype.',
+    
+    longDescription: `
+      <p><strong>The Concept & World-Building:</strong> "The Social Chronicle" is a narrative-driven concept set in 1940s California. The story follows Kim Harlan, a mother with psychic abilities whose newborn is abducted by a corrupt government official, Dr. Krane. To pitch and document this game, I designed a series of immersive "in-world" newspaper posters that outline the lore, Jungian character archetypes, and the 14-beat narrative structure.</p>
+      <p><strong>Narrative Mechanics:</strong> I designed core gameplay systems directly driven by the protagonist's emotional state. The "Emotional State System" forces players to balance risk and reward: high stress grants devastating elemental power but makes Kim highly vulnerable. Furthermore, the game features "Dynamic Newspaper Headlines" that rewrite themselves based on the player's moral choices, acting as both a map and a reflection of Public Opinion.</p>
+      <p><strong>Interactive Prototyping:</strong> To move the project beyond static documents, I developed an interactive, text-based playable prototype of Chapter 1 using <strong>Twine</strong>. This allowed me to test the branching dialogue, player agency, and the emotional pacing of the inciting incident before any 3D development began.</p>
+    `,
+    challenges: [
+      "Translating complex psychological themes (grief, propaganda, and morality) into engaging, balanced gameplay mechanics.",
+      "Designing a dynamic narrative feedback loop where the game world (via newspapers and public opinion) reacts organically to player aggression or goodwill.",
+      "Formatting extensive Game Design Document (GDD) information into immersive, visually appealing in-world artifacts."
+    ],
+    solutions: [
+      "Engineered an 'Emotional State System' that directly ties narrative tension to combat vulnerability and power output.",
+      "Mapped a comprehensive 14-beat dramatic progression, tracking the transition of the protagonist from 'Victim' to 'Warrior'.",
+      "Developed an interactive Twine prototype to playtest narrative pacing and branching dialogue choices."
+    ],
+
+    technologies: ['Narrative Design', 'World-Building', 'Twine', 'Interactive Storytelling', 'Game Design Document (GDD)'],
+    
+    // Replace with one of your amazing 1940s Newspaper Posters!
+    imageUrl: Kim, 
+    
+    // We will link your Twine HTML file here!
+    link: twineGame, 
+    linkLabel: "Play Twine Prototype", 
+
+    secondaryLink: narrativePosters,
+    secondaryLinkLabel: "View Newspaper Posters",
   },
 
-  // --- PROJECT 8: Creative/Design ---
+// --- PROJECT 11: Project Plastic (Capstone Game) ---
   {
-    id: 'ui-kit',
-    title: 'Glassmorphism UI Kit',
-    description: 'A comprehensive design system focusing on accessibility and modern aesthetics. Published as a community file for other designers.',
-    technologies: ['Figma', 'UI/UX', 'Design Systems'],
-    imageUrl: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
-  },
+    id: 'project-plastic',
+    title: 'Project Plastic',
+    description: 'A physics-based action platformer developed in Unity, designed to raise awareness about plastic pollution through satirical, fast-paced gameplay.',
+    
+    longDescription: `
+      <p><strong>The Concept & Research:</strong> "Project Plastic" is a satirical action-platformer designed to motivate young adults (18-26) to take action against plastic waste. Utilizing BJ Fogg's Behavior Model, I aimed to create an experience that was intrinsically motivating rather than purely educational. The story follows Timmy, a turtle who turns himself into a "plastic cyborg" to fight back against the corporations polluting his beach.</p>
+      <p><strong>The Mechanics:</strong> The core loop revolves around fast-paced, physics-based movement and combat. Players must collect plastic waste to upgrade their body—gaining abilities like a "Straw Sword" or "Plastic Grappling Hook"—but these upgrades come at a cost, visually corrupting the character to symbolize the harm of pollution.</p>
+      <p><strong>Technical Implementation:</strong> I developed the game using <strong>Unity and C#</strong>, implementing complex character controllers for wall-running and grappling. I also modeled custom 3D assets in <strong>Blender</strong>, including the rigged turtle character, environmental props, and the modular trash weapons.</p>
+    `,
+    challenges: [
+      "Balancing the serious message of environmental pollution with fun, satirical gameplay that appeals to a Gen Z audience.",
+      "Implementing complex physics-based movement mechanics (grappling, wall-running) that felt responsive and intuitive.",
+      "Creating a cohesive 3D art style (inspired by 'Adventure Time') while optimizing assets for performance."
+    ],
+    solutions: [
+      "Designed a 'corruption' mechanic where upgrades make the player stronger but visually more polluted, creating a narrative conflict through gameplay.",
+      "Conducted on-site research at Delfzijl City Beach to gather reference images and interview locals, grounding the game's setting in reality.",
+      "Utilized Blender to model and rig low-poly characters, ensuring a distinct visual identity that matched the satirical tone."
+    ],
 
-  // --- PROJECT 9: Hardware/IoT ---
-  {
-    id: 'smart-plant',
-    title: 'IoT Plant Monitor',
-    description: 'A 3D-printed enclosure with sensors that tweet you when your plant needs water. Integrates custom hardware with a web API.',
-    technologies: ['Raspberry Pi', 'Python', '3D Printing'],
-    imageUrl: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
+    technologies: ['Unity', 'C#', 'Blender', '3D Modeling', 'Game Design', 'Serious Games'],
+    
+    // Replace with a screenshot of Timmy the Turtle or your gameplay!
+    imageUrl: PP, 
+    
+    // If you have a build or a video, link it here!
+    link: 'https://www.youtube.com/watch?v=mSMoXcaLbmY', 
+    linkLabel: "View Gameplay", 
   },
-
-  // --- PROJECT 10: The "Fun" One ---
-  {
-    id: 'retro-shader',
-    title: 'Retro Shader Pack',
-    description: 'A collection of custom HLSL shaders to emulate PS1 and CRT aesthetics in modern game engines. Optimized for mobile performance.',
-    technologies: ['HLSL/GLSL', 'Graphics Programming', 'Unity'],
-    imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800', 
-    link: '#',
-  }
 ];
 
 export const SKILLS: Skill[] = [

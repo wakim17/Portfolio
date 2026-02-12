@@ -37,11 +37,11 @@ const About: React.FC<AboutProps> = ({ isHomePage = false }) => {
     // --- RENDER: HOME PAGE VERSION (Clean & Simple) ---
     if (isHomePage) {
         return (
-            <section id="about" className="py-20 md:py-32 relative">
+            <section id="about" className="py-20 relative bg-slate-800/30">
                 {/* Background Decor */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
-                <div className="container mx-auto px-6 md:px-20 max-w-6xl">
+                <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
                     <motion.div 
                         variants={containerVariants}
                         initial="hidden"

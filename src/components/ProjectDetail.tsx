@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PROJECTS } from '../constants';
-import { ArrowLeft, Github, ExternalLink, Layers, Code2, AlertTriangle, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Layers, Code2, AlertTriangle, CheckCircle, Layout } from 'lucide-react'; // Added Layout icon
 import { motion } from 'framer-motion';
 
 const ProjectDetail = () => {
@@ -68,7 +68,7 @@ const ProjectDetail = () => {
                     </a>
                 )}
 
-                {/* Live Link / PDF Button - NOW SAFER */}
+                {/* Primary Live Link / PDF Button */}
                 {hasLiveLink ? (
                     <a 
                         href={project.link} 
@@ -89,6 +89,19 @@ const ProjectDetail = () => {
                         {project.linkLabel || "Coming Soon"}
                     </button>
                 )}
+
+                {/* NEW: Secondary Link Button */}
+                {project.secondaryLink && (
+                  <a
+                    href={project.secondaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-all border border-slate-700"
+                  >
+                    <Layout size={20} /> 
+                    {project.secondaryLinkLabel || 'View Project'}
+                  </a>
+                )}
             </div>
         </motion.div>
 
@@ -99,7 +112,7 @@ const ProjectDetail = () => {
             transition={{ delay: 0.2 }}
             className="w-full aspect-video rounded-3xl overflow-hidden border border-slate-700 shadow-2xl mb-16"
         >
-            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-contain bg-slate-950/50" />
         </motion.div>
 
         {/* Content Grid */}

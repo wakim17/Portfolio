@@ -1,9 +1,9 @@
 import React from 'react';
-import { ExternalLink, Github, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { PROJECTS } from '../constants';
 import { useNavigate } from 'react-router-dom';
-import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
+import ProjectCard from './ProjectCard'; // Import the new component!
 
 interface ProjectsProps {
   isHomePage?: boolean;
@@ -13,13 +13,8 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
   const navigate = useNavigate();
   const displayedProjects = isHomePage ? PROJECTS.slice(0, 3) : PROJECTS;
 
-  const handleCardClick = (id: string) => {
-    navigate(`/project/${id}`);
-  };
-
   return (
-    <section id="projects" className={`px-8 md:px-20 max-w-7xl mx-auto ${isHomePage ? 'py-20' : 'pt-32 pb-20'}`}>
-      
+      <section id="projects" className={`max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 ${isHomePage ? 'py-20' : 'pt-32 pb-20'}`}>
       {/* Top Back Button (Only on full page) */}
       {!isHomePage && (
         <div className="mb-12">
@@ -50,82 +45,9 @@ const Projects: React.FC<ProjectsProps> = ({ isHomePage = false }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="cursor-pointer" // Shows the user it's clickable
-            onClick={() => handleCardClick(project.id)}
           >
-            <Tilt 
-              tiltMaxAngleX={5} 
-              tiltMaxAngleY={5} 
-              perspective={1000} 
-              scale={1.02}
-              transitionSpeed={1000}
-              className="h-full"
-            >
-              <div className="h-full group bg-card rounded-xl p-6 border border-slate-700 hover:border-primary/50 shadow-xl flex flex-col relative overflow-hidden">
-                
-                {/* Glow Effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                      <Github size={24} />
-                    </div>
-                    {/* External Links (Stop propagation to prevent opening details page) */}
-                    <div className="flex gap-4">
-                      {project.github && (
-                        <a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-slate-400 hover:text-primary transition z-20"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                          <Github size={20} />
-                        </a>
-                      )}
-                      {project.link && (
-                        <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-slate-400 hover:text-primary transition z-20"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                          <ExternalLink size={20} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="h-48 mb-4 overflow-hidden rounded-lg bg-slate-800">
-                      <img 
-                        src={project.imageUrl} 
-                        alt={project.title} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" 
-                      />
-                  </div>
-
-                  <h3 className="text-xl font-bold mb-2 text-slate-100 group-hover:text-primary transition">{project.title}</h3>
-                  <p className="text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.technologies.slice(0, 3).map(tag => (
-                      <span key={tag} className="text-xs font-mono text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full mb-2 mr-2 inline-block">
-                        {tag}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                        <span className="text-xs font-mono text-slate-500 bg-slate-800 px-3 py-1 rounded-full mb-2 inline-block">
-                            +{project.technologies.length - 3}
-                        </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Tilt>
+            {/* Replaced the big hardcoded block with this single clean line! */}
+            <ProjectCard project={project} />
           </motion.div>
         ))}
       </div>

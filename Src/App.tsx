@@ -8,10 +8,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
 import ProjectDetail from './components/ProjectDetail';
+// REMOVED: import Process from './components/Process'; 
 
 const Home = () => (
   <>
     <Hero />
+    {/* REMOVED: <Process /> - It's now inside the Hero! */}
     <Projects isHomePage={true} />
     <About isHomePage={true} />
     <Contact />
@@ -43,28 +45,21 @@ const ScrollToTop = () => {
 function App() {
   return (
     <Router>
-      {/* FIX: We removed 'bg-dark' from here and added 'z-0'. 
-         This ensures the background color doesn't hide the glows.
-      */}
       <div className="min-h-screen bg-slate-900 text-slate-200 relative overflow-hidden z-0">
         
-        {/* BACKGROUND GLOWS: Now definitely behind the content but visible on the dark bg */}
+        {/* BACKGROUND GLOWS */}
         <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-            {/* Top Left Blue Glow */}
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] opacity-50 animate-pulse"></div>
-            {/* Bottom Right Purple Glow */}
             <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[100px] opacity-50 animate-pulse"></div>
         </div>
 
         <ScrollToTop />
         <Header />
         
-        {/* Content sits above the glow */}
         <main className="relative z-10">
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<AllProjectsPage />} />
-            {/* NEW ROUTE BELOW */}
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/about" element={<AboutPage />} />
         </Routes>
