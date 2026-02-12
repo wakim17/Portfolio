@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
     assetsInclude: ['**/*.zip', '**/*.pdf', '**/*.html', '**/*.mp4'],
 
     plugins: [react()],
+    base: './',
     
     server: {
       port: 3000,
