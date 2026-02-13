@@ -5,7 +5,7 @@ import {
   Lightbulb, Zap, PenTool, Gamepad2, Rocket 
 } from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
-import profileImg from '../assets/profile-pic.jpg'; 
+import profileImg from '../assets/me.jpg'; 
 
 const workflowSteps = [
   {
