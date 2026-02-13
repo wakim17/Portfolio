@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     // --- THIS IS THE FIX ---
-    // We moved assetsInclude inside the return object
-    assetsInclude: ['**/*.zip', '**/*.pdf', '**/*.html', '**/*.mp4'],
+    // Removed '**/*.html' so Vite treats index.html as the website entry point!
+    assetsInclude: ['**/*.zip', '**/*.pdf', '**/*.mp4'],
 
     plugins: [react()],
     base: '/',
