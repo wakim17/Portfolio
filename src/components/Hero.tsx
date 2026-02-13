@@ -5,7 +5,7 @@ import {
   Lightbulb, Zap, PenTool, Gamepad2, Rocket 
 } from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
-import profilePic from '../assets/me.jpg';
+import profileImg from '../assets/profile-pic.jpg'; 
 
 const workflowSteps = [
   {
@@ -115,7 +115,7 @@ const Hero = () => {
               <div className="relative aspect-square bg-slate-800 rounded-3xl border border-slate-700 p-2 shadow-2xl overflow-hidden group">
                 <div className="w-full h-full bg-slate-900 rounded-2xl relative overflow-hidden">
                     <img 
-                      src={profilePic} 
+                      src={profileImg} 
                       alt="Jhony Wakim" 
                       className="w-full h-full object-cover" 
                     />
