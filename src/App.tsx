@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
 import ProjectDetail from './components/ProjectDetail';
-// REMOVED: import Process from './components/Process'; 
+
 
 const Home = () => (
   <>
