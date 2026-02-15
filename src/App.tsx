@@ -66,7 +66,7 @@ function App() {
         </main>
         
         <Footer />
-        <AIChat />
+        {/* <AIChat /> */}
       </div>
     </Router>
   );
