@@ -1,9 +1,9 @@
-import React from 'react';
-import { Project, Skill } from './types';
+import React, { JSX } from 'react';
+import { Project, Skill} from './types';
 import { 
   Code, Database, Layout, Server, Smartphone, Globe, Cpu, Terminal, 
   Gamepad2, Palette, Layers, Box, PenTool, Mic, Glasses, FlaskConical, Zap,
-  Users, Wifi, Printer, BookOpen 
+  Users, Wifi, Printer, BookOpen, Sparkles, Wrench, Lightbulb, GitBranch
 } from 'lucide-react';
 
 import internshipPdf from './assets/internship-portfolio.pdf';
@@ -166,7 +166,6 @@ export const PROJECTS: Project[] = [
 
     technologies: ['Tabletop Game Design', 'Client Relations', 'UI/UX Design', 'Print & Play', 'Serious Games'],
     imageUrl: Duo, 
-    
     link: trustTriangleGame, 
     linkLabel: "Download Print & Play", 
     },
@@ -226,10 +225,7 @@ export const PROJECTS: Project[] = [
     ],
 
     technologies: ['Unreal Engine 5', 'Blueprint Scripting', 'UX Research', 'Level Design', 'Performance Optimization'],
-    
-    // Remember to take a spooky screenshot of your game, put it in src/assets, and import it at the top!
-    imageUrl: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?auto=format&fit=crop&q=80&w=800', 
-    
+    imageUrl: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?auto=format&fit=crop&q=80&w=800',     
     link: '#', 
     linkLabel: "Watch Gameplay Video", 
   },
@@ -403,24 +399,40 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+
+
+// --- HELPER: Color mapping for your new categories ---
+export const categoryStyles: Record<string, string> = {
+  'game-dev': 'bg-purple-500/10 text-purple-400 border-purple-500/20', 
+  'xr-hardware': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20', 
+  'web-ai': 'bg-blue-500/10 text-blue-400 border-blue-500/20', 
+  'leadership': 'bg-amber-500/10 text-amber-400 border-amber-500/20', 
+};
+
 export const SKILLS: Skill[] = [
-  // --- The Core (Game & Tech) ---
-  { name: 'Game Design & Physics', icon: <Gamepad2 size={20} />, category: 'frontend' },
-  { name: 'Unity & Unreal', icon: <Box size={20} />, category: 'frontend' },
-  { name: 'C# & C++', icon: <Code size={20} />, category: 'backend' },
-  { name: 'Multiplayer / Networking', icon: <Wifi size={20} />, category: 'backend' },
+  // --- Game Development (Core) ---
+  { name: 'Game Design & Physics', icon: <Gamepad2 size={20} />, category: 'game-dev' },
+  { name: 'Unity & Unreal Engine', icon: <Box size={20} />, category: 'game-dev' },
+  { name: 'C# & C++', icon: <Code size={20} />, category: 'game-dev' },
+  { name: 'Multiplayer / Networking', icon: <Wifi size={20} />, category: 'game-dev' },
+  { name: 'Blueprints & Visual Scripting', icon: <Layers size={20} />, category: 'game-dev' },
 
-  // --- The Innovation (VR & Hardware) ---
-  { name: 'XR (VR/AR) & Optimization', icon: <Glasses size={20} />, category: 'frontend' },
-  { name: 'Arduino & Robotics', icon: <Cpu size={20} />, category: 'backend' },
-  { name: 'Rapid Prototyping (3D/Laser)', icon: <Printer size={20} />, category: 'backend' },
+  // --- XR & Hardware (The Innovation) ---
+  { name: 'XR (VR/AR) & Optimization', icon: <Glasses size={20} />, category: 'xr-hardware' },
+  { name: 'Arduino & Microcontrollers', icon: <Cpu size={20} />, category: 'xr-hardware' },
+  { name: 'Rapid Prototyping (3D/Laser)', icon: <Printer size={20} />, category: 'xr-hardware' },
+  { name: 'IoT & Sensors', icon: <Wrench size={20} />, category: 'xr-hardware' },
 
-  // --- The Leader (Soft Skills) ---
-  { name: 'Scrum Master / Agile', icon: <Users size={20} />, category: 'design' }, 
-  { name: 'Tech Documentation', icon: <BookOpen size={20} />, category: 'design' },
+  // --- Web Stack & AI (The Software) ---
+  { name: 'React & Next.js Ecosystem', icon: <Globe size={20} />, category: 'web-ai' },
+  { name: 'Python & AI Integration', icon: <Sparkles size={20} />, category: 'web-ai' },
+  { name: 'UI/UX Prototyping (Figma)', icon: <Palette size={20} />, category: 'web-ai' },
+  { name: 'Databases & APIs', icon: <Database size={20} />, category: 'web-ai' },
+  { name: 'Git & CI/CD Pipelines', icon: <GitBranch size={20} />, category: 'web-ai' },
 
-  // --- The Web Stack ---
-  { name: 'React Ecosystem', icon: <Globe size={20} />, category: 'frontend' },
-  { name: 'Python & AI', icon: <Terminal size={20} />, category: 'backend' },
-  { name: 'UI/UX (Figma)', icon: <Palette size={20} />, category: 'frontend' },
+  // --- Leadership & Soft Skills (The Professional) ---
+  { name: 'Scrum Master / Agile', icon: <Users size={20} />, category: 'leadership' }, 
+  { name: 'Tech Documentation', icon: <BookOpen size={20} />, category: 'leadership' },
+  { name: 'Problem Solving & Ideation', icon: <Lightbulb size={20} />, category: 'leadership' },
+  { name: 'Systems Architecture', icon: <Terminal size={20} />, category: 'leadership' },
 ];

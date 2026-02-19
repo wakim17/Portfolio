@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
 
 export interface Project {
   id: string;
@@ -15,16 +15,19 @@ export interface Project {
   
   // Links
   link?: string;
-  linkLabel?: string; // NEW: Custom text for the button (e.g., "View PDF")
+  linkLabel?: string;
   github?: string;
-  secondaryLink?: string;      // NEW: For your second button url
-  secondaryLinkLabel?: string; // NEW: For your second button text
+  secondaryLink?: string;       
+  secondaryLinkLabel?: string; 
 }
 
+export type SkillCategory = 'game-dev' | 'xr-hardware' | 'web-ai' | 'leadership';
+
+// KEEP ONLY THIS SKILL INTERFACE
 export interface Skill {
   name: string;
-  icon: ReactNode;
-  category: 'frontend' | 'backend' | 'tools' | 'design';
+  icon: JSX.Element | ReactNode; 
+  category: SkillCategory;
 }
 
 export interface ChatMessage {

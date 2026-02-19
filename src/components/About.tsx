@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, ArrowLeft, Code2, Rocket, Users, Brain, FileText, Download, Cpu } from 'lucide-react';
-import { ABOUT_SUMMARY, ABOUT_FULL, SKILLS } from '../constants';
+import { ABOUT_SUMMARY, ABOUT_FULL, SKILLS, categoryStyles } from '../constants';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -166,11 +166,7 @@ const About: React.FC<AboutProps> = ({ isHomePage = false }) => {
                                 variants={itemVariants}
                                 className="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all group flex items-center gap-3"
                             >
-                                <div className={`p-2 rounded-lg ${
-                                    skill.category === 'frontend' ? 'bg-blue-500/10 text-blue-400' : 
-                                    skill.category === 'backend' ? 'bg-green-500/10 text-green-400' : 
-                                    'bg-purple-500/10 text-purple-400'
-                                } group-hover:scale-110 transition-transform`}>
+                                <div className={`p-2 rounded-lg border ${categoryStyles[skill.category]} group-hover:scale-110 transition-transform`}>
                                     {skill.icon}
                                 </div>
                                 <span className="font-medium text-slate-200">{skill.name}</span>
