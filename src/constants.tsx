@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
     
     longDescription: `
       <p><strong>The Role:</strong> My core responsibility was to modernize the educational curriculum by introducing "Future Tech" into the classroom. This involved a mix of strategic research and hands-on hardware prototyping.</p>
-      <p><strong>Hardware Innovation (Drone & MR):</strong> I engineered a custom bridge between a <strong>DJI Drone</strong> and a <strong>Meta Quest 2</strong> to create an immersive FPV flight experience for students. Additionally, I developed <strong>Mixed Reality</strong> applications that allowed students to interact with 3D learning models in physical space.</p>
+      <p><strong>Hardware Innovation (Drone & MR):</strong> I engineered a custom bridge between a <strong>DJI Drone</strong> and a <strong>Meta Quest 3</strong> to create an immersive FPV flight experience for students. Additionally, I developed <strong>Mixed Reality</strong> application that allowed students to interact with planets in space.</p>
       <p><strong>Ed-Tech & AI Research:</strong> Beyond hardware, I implemented <strong>360-degree video</strong> tours to create virtual field trips. I also conducted critical research into <strong>Generative AI</strong> (ChatGPT), analyzing its ethical implications to help the institution formulate safe usage guidelines.</p>
     `,
     challenges: [
@@ -138,43 +138,10 @@ export const PROJECTS: Project[] = [
     ],
 
     technologies: ['Robotics', 'KiCad', 'AI Integration', 'State Machines', 'Gamification'],
-    // Image: A conceptual robotics/desk pet image
     imageUrl: RobotImage, 
-    
     link: '#',
     linkLabel: "Video Coming Soon", 
   },
-
-// --- PROJECT: The Armour of God ---
-  {
-    id: 'armour-of-god',
-    title: 'The Armour of God',
-    description: 'Designed and developed a local multiplayer "pass-the-phone" party game centered around strategic choices and spiritual themes.',
-    
-    longDescription: `
-      <p><strong>The Concept:</strong> I developed "The Armour of God," a strategic party game designed to be played by two to five players sharing a single mobile device. Targeted at teenagers aged thirteen to seventeen, the game translates the biblical concept of spiritual warfare (Ephesians 6) into an engaging, turn-based experience.</p>
-      <p><strong>Mechanics & Design:</strong> The core mechanic revolves around a "pass-the-phone" loop. I designed the gameplay so players must navigate through various trials, ruins, and arenas, making tactical decisions to collect and utilize different pieces of the metaphorical armor. I analyzed the target audience to ensure the pacing and social dynamics of sharing a device remained fun and competitive without losing the underlying narrative theme.</p>
-      <p><strong>Development:</strong> I evaluated traditional local multiplayer constraints to engineer a seamless user interface that easily transitions between players. The project required synthesizing narrative design with tight, easily understandable mobile interactions.</p>
-    `,
-    challenges: [
-      "Designing a seamless and fair 'pass-the-phone' loop for two to five players on a single mobile screen.",
-      "Translating abstract theological concepts (Ephesians 6) into engaging, competitive party game mechanics for teenagers.",
-      "Maintaining player attention and managing hidden information during off-turns in a local multiplayer setting."
-    ],
-    solutions: [
-      "Engineered an intuitive user interface that clearly telegraphs turn transitions and manages player states.",
-      "Formulated rapid trial encounters (ruins, arenas) to keep the turn pacing fast and engaging.",
-      "Synthesized strategic resource gathering (armor pieces) with interactive choices to maintain competitive tension."
-    ],
-
-    technologies: ['Mobile Game Development', 'Local Multiplayer', 'Unity', 'User Interface Design'],
-    // Image: Represents mobile/interactive gaming
-    imageUrl: armourImage,    
-    link: 'https://wakim17.itch.io/armour-of-god',
-    linkLabel: "Download on Itch.io", 
-    github: 'https://github.com/wakim17/Armour-of-God'
-  },
-
   // --- PROJECT : The Trust Triangle (Client Project) ---
 {
     id: 'trust-triangle-card-game',
@@ -198,14 +165,52 @@ export const PROJECTS: Project[] = [
     ],
 
     technologies: ['Tabletop Game Design', 'Client Relations', 'UI/UX Design', 'Print & Play', 'Serious Games'],
-    
-    // Remember to import your image at the top and replace this string if you have a photo of the cards!
     imageUrl: Duo, 
     
-    // Uses the zip file variable you imported at the top of constants.tsx
     link: trustTriangleGame, 
     linkLabel: "Download Print & Play", 
     },
+
+// --- PROJECT: The Armour of God ---
+  {
+    id: 'armour-of-god',
+    title: 'The Armour of God',
+    description: 'A single-device mobile party game built in Unity that brings Christian youth together through team-based, faith-filled challenges.',
+    
+    longDescription: `
+      <p><strong>The Challenge:</strong> Most Christian digital tools are solitary experiences, such as reading plans or simple quizzes. Our goal was to bridge the gap between "chaotic party fun" and "meaningful spiritual fellowship." Designed specifically for the NextWave Christian Youth Community, we needed a low-friction tool that could operate in environments like church basements with spotty Wi-Fi while maintaining high biblical integrity.</p>
+      <p><strong>The Mechanics:</strong> Armour of God is a "pass-the-phone" experience for 4-10 players divided into two teams: Red vs. Blue. The core loop, "Equip the Armour," features six diverse mini-games based on Ephesians 6: 
+        <ul>
+          <li><strong>Belt of Truth (Trivia):</strong> Collaborative biblical questions.</li>
+          <li><strong>Breastplate of Righteousness (Dilemmas):</strong> Teams discuss and resolve moral scenarios.</li>
+          <li><strong>Shoes of the Gospel (Gospel Messenger):</strong> Describing biblical terms without using "forbidden words."</li>
+          <li><strong>Shield of Faith (Verse Completion):</strong> Teams work together to fill in blanks of scripture.</li>
+          <li><strong>Helmet of Salvation (Word Chain):</strong> A high-pressure vocabulary challenge before the timer explodes.</li>
+          <li><strong>Sword of the Spirit (Sword Swipe):</strong> A fast-paced reflex mode separating biblical truths from misconceptions.</li>
+        </ul>
+      </p>
+      <p><strong>The Impact:</strong> By transforming invisible spiritual concepts into tangible game mechanics, the project provides a scalable tool for youth leaders globally. A key innovation is the Facilitator Mode, which integrates the Youth Leader as a "Human API" to judge subjective answers and award "Spirit Bonuses" for good sportsmanship. This ensures the game remains a teaching tool rather than just a distraction.</p>
+    `,
+    challenges: [
+      "Designing a robust offline mode to ensure functionality in church environments with no internet access.",
+      "Managing competitive arguments over creative or theological answers through a manual 'Facilitator' scoring system.",
+      "Ensuring legibility and ergonomics for groups looking over a shoulder by locking the app to landscape mode.",
+      "Creating 'accidental-touch-proof' mechanics for high-energy device passing."
+    ],
+    solutions: [
+      "Implemented a 'Facilitator Toggle' that removes subjective games if a leader isn't present to prevent scoring disputes.",
+      "Developed a 'Safe Area' script and thumb-zone ergonomics to accommodate various Android device notches and hardware.",
+      "Rebranded from 'Faith Hero' to 'Armour of God' to strengthen the thematic resonance with the biblical source material.",
+      "Utilized a Responsive Canvas Architecture to ensure UI readability across thousands of different aspect ratios."
+    ],
+
+    technologies: ['Mobile Game Development', 'Unity', 'Android', 'C#', 'UI/UX Design', 'Local Multiplayer'],
+    imageUrl: armourImage,    
+    link: 'https://wakim17.itch.io/armour-of-god',
+    linkLabel: "Download on Itch.io", 
+    github: 'https://github.com/wakim17/Armour-of-God'
+  },
+
 
 // --- PROJECT : Unreal Engine Game Development ---
 {
