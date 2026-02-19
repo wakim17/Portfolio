@@ -179,16 +179,7 @@ export const PROJECTS: Project[] = [
     
     longDescription: `
       <p><strong>The Challenge:</strong> Most Christian digital tools are solitary experiences, such as reading plans or simple quizzes. Our goal was to bridge the gap between "chaotic party fun" and "meaningful spiritual fellowship." Designed specifically for the NextWave Christian Youth Community, we needed a low-friction tool that could operate in environments like church basements with spotty Wi-Fi while maintaining high biblical integrity.</p>
-      <p><strong>The Mechanics:</strong> Armour of God is a "pass-the-phone" experience for 4-10 players divided into two teams: Red vs. Blue. The core loop, "Equip the Armour," features six diverse mini-games based on Ephesians 6: 
-        <ul>
-          <li><strong>Belt of Truth (Trivia):</strong> Collaborative biblical questions.</li>
-          <li><strong>Breastplate of Righteousness (Dilemmas):</strong> Teams discuss and resolve moral scenarios.</li>
-          <li><strong>Shoes of the Gospel (Gospel Messenger):</strong> Describing biblical terms without using "forbidden words."</li>
-          <li><strong>Shield of Faith (Verse Completion):</strong> Teams work together to fill in blanks of scripture.</li>
-          <li><strong>Helmet of Salvation (Word Chain):</strong> A high-pressure vocabulary challenge before the timer explodes.</li>
-          <li><strong>Sword of the Spirit (Sword Swipe):</strong> A fast-paced reflex mode separating biblical truths from misconceptions.</li>
-        </ul>
-      </p>
+      <p><strong>The Mechanics:</strong> Armour of God is a "pass-the-phone" experience for 4-10 players divided into two teams: Red vs. Blue. The core loop, "Equip the Armour," features six diverse mini-games based on Ephesians 6. </p>
       <p><strong>The Impact:</strong> By transforming invisible spiritual concepts into tangible game mechanics, the project provides a scalable tool for youth leaders globally. A key innovation is the Facilitator Mode, which integrates the Youth Leader as a "Human API" to judge subjective answers and award "Spirit Bonuses" for good sportsmanship. This ensures the game remains a teaching tool rather than just a distraction.</p>
     `,
     challenges: [
