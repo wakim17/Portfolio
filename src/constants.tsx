@@ -16,6 +16,8 @@ import narrativePosters from './assets/Narrative posters.pdf';
 import Kim from './assets/Kim.png';
 import Duo from './assets/duo1.jpeg';
 import PP from './assets/PP.png';
+import NP from './assets/Noorderpoort.jpg';
+import NPL from './assets/NPlogo.png';
 
 export const PORTFOLIO_OWNER = "Jhony Wakim";
 export const PORTFOLIO_ROLE = "Developer & Game Designer";
@@ -72,20 +74,16 @@ export const PROJECTS: Project[] = [
       <p>By conducting user research with actual faculty members, I am refining the User Experience to ensure that the "first time user experience" converts skepticism into enthusiasm.</p>
     `,
     challenges: [
-      "Educators often have zero prior experience with Virtual Reality controllers.",
-      "Motion sickness is a major barrier for first-time users.",
-      "Demonstrating value quickly before the user loses interest."
+      "Coming Soon."
     ],
     solutions: [
-      "Implemented a 'Gaze-based' interaction system to simplify controls.",
-      "Designed a comfort-first locomotion system to minimize nausea.",
-      "Curated a 'Magic Moment' library that delivers instant visual impact."
+      "Coming Soon."
     ],
 
     technologies: ['Virtual Reality', 'Unity', 'User Research', 'Rapid Prototyping'],
-    imageUrl: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&q=80&w=800', 
+    imageUrl: NP, 
     link: '#', 
-    linkLabel: "Coming Soon", // Custom Text
+    linkLabel: "Coming Soon", 
     github: '#' 
   },
   
@@ -112,9 +110,7 @@ export const PROJECTS: Project[] = [
     ],
 
     technologies: ['AI Research', 'Mixed Reality', 'DJI SDK', '360° Video', 'Unity'],
-    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800', 
-    
-    // Link to your PDF
+    imageUrl: NPL, 
     link: internshipPdf, 
     linkLabel: "View Portfolio PDF",
     
